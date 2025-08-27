@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.bg-morado-claro {
+  background-color: #E0C6EE;
+}
+
 .navbar-custom {
   background-color: #f8f9fa;
   border-bottom: 1px solid #dee2e6;
