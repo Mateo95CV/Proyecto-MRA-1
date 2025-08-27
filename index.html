@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRA - Óptica Online</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light top-nav">
+        <div class="container">
+            <div class="d-flex justify-content-between w-100 align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="img/LogoMRA.png" alt="Logo" width="200px">
+                </div>
+                
+                <div class="search-bar mx-auto">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="¿Qué estás buscando?">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-tag"></i>
+                    <i class="bi bi-heart"></i>
+                    <i class="bi bi-cart3"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white main-nav border-bottom">
+        <div class="container">
+            <div class="nav-links">
+                <a href="#" class="active">Monturas</a>
+                <a href="#">Tecnologias</a>
+                <a href="#">Productos</a>
+                <a href="#">Lentes de contacto</a>
+                <a href="#">Citas</a>
+                <a href="#">Sobre Nosotros</a>
+                <a href="#">Promociones</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-list me-2"></i>
+                    <h6 class="mb-0 fw-bold">Categorías</h6>
+                </div>
+                
+                <div class="category-list">
+                    <a href="#" class="category-item active">
+                        <i class="bi bi-grid me-2"></i> Todos los productos
+                    </a>
+                    <a href="#" class="category-item">
+                        <i class="bi bi-eyeglasses me-2"></i> Gotas Oftalmologicas
+                    </a>
+                    <a href="#" class="category-item">
+                        <i class="bi bi-sun me-2"></i> Pañitos de microfibra
+                    </a>
+                    <a href="#" class="category-item">
+                        <i class="bi bi-circle me-2"></i> Spray limpiador
+                    </a>
+                    <a href="#" class="category-item">
+                        <i class="bi bi-square me-2"></i> Estuche para lentes
+                    </a>
+                    <a href="#" class="category-item">
+                        <i class="bi bi-droplet me-2"></i> Kit de cuidado
+                    </a>
+                    <a href="#" class="category-item">
+                        <i class="bi bi-shield-check me-2"></i> Protección ocular
+                    </a>
+                    <a href="#" class="category-item">
+                        <i class="bi bi-gear me-2"></i> Accesorios
+                    </a>
+                    <a href="#" class="category-item">
+                        <i class="bi bi-star me-2"></i> Marcas premium
+                    </a>
+                    <a href="#" class="category-item">
+                        <i class="bi bi-percent me-2"></i> Ofertas especiales
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 p-4">
+                <div class="row">
+                    <!-- Producto 1 -->
+                    <div class="col-md-4">
+                        <a href="#" class="product-card text-center">
+                            <img src="img/RaybanAviator.jpg" alt="Ray-Ban Aviator" class="product-image">
+                            <h6 class="fw-bold">Ray-Ban Aviator</h6>
+                            <small class="text-muted">Lentes de sol clásicos</small>
+                            <div class="mt-2">
+                                <span class="badge bg-success">$299.900</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="col-md-4">
+                        <a href="#" class="product-card text-center">
+                            <img src="img/OakleySport.jpg" alt="Ray-Ban Aviator" class="product-image">
+                            <h6 class="fw-bold">Oakley Sport</h6>
+                            <small class="text-muted">Lentes deportivos</small>
+                            <div class="mt-2">
+                                <span class="badge bg-success">$459.900</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="col-md-4">
+                        <a href="#" class="product-card text-center">
+                            <img src="img/Transitions.jpeg" alt="Transitions" class="product-image">
+                            <h6 class="fw-bold">Transitions</h6>
+                            <small class="text-muted">Lentes que se adaptan a la luz</small>
+                            <div class="mt-2">
+                                <span class="badge bg-success">$199.900</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="col-md-4">
+                        <a href="#" class="product-card text-center">
+                            <img src="img/Varilux.jpeg" alt="Varilux Progressive" class="product-image">
+                            <h6 class="fw-bold">Varilux Progressive</h6>
+                            <small class="text-muted">Lentes multifocales</small>
+                            <div class="mt-2">
+                                <span class="badge bg-success">$599.900</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Producto 5 -->
+                    <div class="col-md-4">
+                        <a href="#" class="product-card text-center">
+                            <img src="img/AirOptix.jpg" alt="AirOptix" class="product-image">
+                            <h6 class="fw-bold">Air Optix</h6>
+                            <small class="text-muted">Lentes de contacto mensuales</small>
+                            <div class="mt-2">
+                                <span class="badge bg-success">$89.900</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Producto 6 -->
+                    <div class="col-md-4">
+                        <a href="#" class="product-card text-center">
+                            <img src="img/CooperVision.jpg" alt="CooperVision" class="product-image">
+                            <h6 class="fw-bold">Cooper Vision</h6>
+                            <small class="text-muted">Lentes de contacto silicone</small>
+                            <div class="mt-2">
+                                <span class="badge bg-success">$119.900</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Producto 7 -->
+                    <div class="col-md-4">
+                        <a href="#" class="product-card text-center">
+                            <img src="img/Prada.jpg" alt="Prada" class="product-image">
+                            <h6 class="fw-bold">Prada Luxury</h6>
+                            <small class="text-muted">Monturas de diseñador</small>
+                            <div class="mt-2">
+                                <span class="badge bg-success">$899.900</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Producto 8 -->
+                    <div class="col-md-4">
+                        <a href="#" class="product-card text-center">
+                            <img src="img/Renu.jpg" alt="Renu" class="product-image">
+                            <h6 class="fw-bold">Renu Advanced</h6>
+                            <small class="text-muted">Solución de limpieza</small>
+                            <div class="mt-2">
+                                <span class="badge bg-success">$29.900</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Producto 9 -->
+                    <div class="col-md-4">
+                        <a href="#" class="product-card text-center">
+                            <img src="img/Essilor.jpg" alt="Essilor" class="product-image">
+                            <h6 class="fw-bold">Essilor Crizal</h6>
+                            <small class="text-muted">Tratamiento anti-reflejo</small>
+                            <div class="mt-2">
+                                <span class="badge bg-success">$149.900</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
