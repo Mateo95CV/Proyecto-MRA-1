@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Administrador | Óptica MRA</title>
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="admin-page">
+
+  <!-- HEADER ADMIN -->
+  <header class="admin-header">
+    <h1>Panel de Administración</h1>
+    <button class="logout-btn">Cerrar sesión</button>
+  </header>
+
+  <div class="admin-container">
+
+    <!-- SIDEBAR -->
+    <div id="admin-sidebar"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+
+      <!-- STATS -->
+      <section class="stats">
+        <div class="card">
+          <h3>Citas pendientes</h3>
+          <p class="number">12</p>
+        </div>
+
+        <div class="card">
+          <h3>Productos activos</h3>
+          <p class="number">86</p>
+        </div>
+
+        <div class="card">
+          <h3>Promociones</h3>
+          <p class="number">4</p>
+        </div>
+      </section>
+
+      <!-- TABLE -->
+      <section class="admin-section">
+        <h2>Últimas citas</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ana Pérez</td>
+              <td>12/03/2026</td>
+              <td>10:00 AM</td>
+              <td>Pendiente</td>
+            </tr>
+            <tr>
+              <td>Carlos Gómez</td>
+              <td>12/03/2026</td>
+              <td>11:30 AM</td>
+              <td>Confirmada</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="/public/js/loadSidebar.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MRA - Tecnologías</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons (si los usas) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ---------------------------------------- */
+    /* CONTENIDO TECNOLOGÍAS */
+    /* ---------------------------------------- */
+    .tecnologias-container{
+      max-width:1100px;
+      margin:40px auto;
+      padding:28px;
+      background:#f8f9fa;
+      border-radius:12px;
+      box-shadow:var(--card-shadow);
+    }
+
+    .tecnologias-title{
+      text-align:center;
+      font-weight:700;
+      font-size:26px;
+      margin-bottom:25px;
+      font-family:'Century Gothic';
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+    }
+
+    .item{
+      display:flex;
+      gap:15px;
+      margin-bottom:22px;
+      line-height:1.4;
+    }
+
+    .item-icon{
+      font-size:32px;
+    }
+
+    @media(max-width:900px){
+      .row{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .tecnologias-box{
+  max-width:1150px;
+  margin:50px auto;
+  padding:40px;
+  background:#f8f9fa;
+  border-radius:14px;
+  box-shadow:var(--card-shadow);
+}
+
+.tecnologias-title{
+  text-align:center;
+  font-weight:700;
+  font-size:26px;
+  margin-bottom:35px;
+}
+
+.tecnologias-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.tec-item{
+  display:flex;
+  gap:18px;
+  margin-bottom:28px;
+}
+
+.tec-icon{
+  font-size:34px;
+  width:40px;
+}
+
+.tec-name{
+  margin:0;
+  font-size:17px;
+  font-weight:600;
+}
+
+.tec-subtitle{
+  margin-top:25px;
+  font-weight:700;
+  font-size:17px;
+}
+
+.tec-list{
+  margin-top:10px;
+  line-height:1.7;
+  padding-left:20px;
+}
+
+@media(max-width:900px){
+  .tecnologias-grid{
+    grid-template-columns:1fr;
+  }
+  .tecnologias-box{
+    padding:25px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+
+  <div class="tecnologias-box">
+
+    <h3 class="tecnologias-title">Tecnología inteligente en cada lente</h3>
+
+    <div class="tecnologias-grid">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <div>
+
+        <div class="tec-item">
+          <div class="tec-icon">☀️</div>
+          <div>
+            <h4 class="tec-name">Fotocromía inteligente</h4>
+            <p>Lentes que reaccionan a la luz solar oscureciéndose y aclarándose automáticamente.</p>
+          </div>
+        </div>
+
+        <div class="tec-item">
+          <div class="tec-icon">🌤️</div>
+          <div>
+            <h4 class="tec-name">Transitions XTRActive</h4>
+            <p>Se activan incluso dentro del auto y ofrecen oscurecimiento extra en exteriores.</p>
+          </div>
+        </div>
+
+        <h4 class="tec-subtitle">Protección completa</h4>
+        <ul class="tec-list">
+          <li>Filtro de luz azul</li>
+          <li>Antirreflejante premium</li>
+          <li>Protección UV 100%</li>
+          <li>Tratamiento resistente a rayaduras</li>
+          <li>Antiempañante</li>
+        </ul>
+
+      </div>
+
+      <!-- COLUMNA DERECHA -->
+      <div>
+
+        <div class="tec-item">
+          <div class="tec-icon">🌓</div>
+          <div>
+            <h4 class="tec-name">Transitions Signature GEN</h4>
+            <p>Se aclaran más rápido que nunca y vienen en nuevos colores modernos.</p>
+          </div>
+        </div>
+
+        <div class="tec-item">
+          <div class="tec-icon">🛡️</div>
+          <div>
+            <h4 class="tec-name">Transitions XTRActive Polarized</h4>
+            <p>Primer lente fotocromático polarizado: menos reflejo y más nitidez.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+  <script src="../js/navbar.js"></script>
+  <script src="../js/activeNav.js"></script>
+  
+</body>
+</html>

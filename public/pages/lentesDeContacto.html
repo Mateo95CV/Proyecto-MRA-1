@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MRA - Lentes de contacto</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons (si los usas) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ---------------------------------------- */
+    /* LAYOUT PRINCIPAL */
+    /* ---------------------------------------- */
+    .container{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:20px;
+      padding:28px;
+    }
+
+    /* ---------------------------------------- */
+    /* SIDEBAR */
+    /* ---------------------------------------- */
+    .sidebar{
+      background:#fff;
+      border:1px solid #e5e4f2;
+      border-radius:8px;
+      padding:18px;
+      box-shadow:var(--card-shadow);
+    }
+    .sidebar h3{
+      margin-bottom:12px;
+      font-size:18px;
+      color:var(--purple);
+    }
+    .filter-group{margin-bottom:16px}
+    .filter-group h4{
+      font-size:14px;
+      margin-bottom:8px;
+      color:#444;
+    }
+    .filter-group label{
+      display:block;
+      font-size:14px;
+      margin-bottom:6px;
+      cursor:pointer;
+    }
+
+    /* ---------------------------------------- */
+    /* PRODUCTOS */
+    /* ---------------------------------------- */
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+      gap:20px;
+    }
+    .product{
+      border:1px solid #eae9f5;
+      border-radius:10px;
+      padding:12px;
+      text-align:center;
+      box-shadow:var(--card-shadow);
+      transition:transform .2s ease;
+      background:white;
+    }
+    .product:hover{transform:translateY(-4px)}
+    .product img{
+      width:100%;
+      height:140px;
+      object-fit:contain;
+      margin-bottom:8px;
+    }
+    .product .name{
+      font-weight:600;
+      font-size:15px;
+      color:#222;
+      margin-bottom:4px;
+    }
+    .product .desc{
+      font-size:13px;
+      color:#777;
+    }
+
+    @media(max-width:900px){
+      .container{grid-template-columns:1fr}
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h3>Categorías</h3>
+
+      <div class="filter-group">
+        <h4>Tipos</h4>
+        <label><input type="checkbox" value="Diarios"> Lentes diarios</label>
+        <label><input type="checkbox" value="Mensuales"> Lentes mensuales</label>
+        <label><input type="checkbox" value="Colores"> Lentes de colores</label>
+        <label><input type="checkbox" value="Tóricos"> Tóricos</label>
+        <label><input type="checkbox" value="Multifocales"> Multifocales</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Marcas</h4>
+        <label><input type="checkbox" value="FreshLook"> FreshLook</label>
+        <label><input type="checkbox" value="Air"> Air Optix</label>
+        <label><input type="checkbox" value="Opharcil"> Opharcil</label>
+        <label><input type="checkbox" value="Anydaly"> Anydaly</label>
+      </div>
+    </aside>
+
+    <!-- PRODUCTOS -->
+    <section class="products" id="productList"></section>
+
+  </main>
+
+  <!-- SCRIPT FILTRO -->
+  <script>
+    const productos = [
+      { nombre:'Anydaly', desc:'Descripción del producto', img:'https://via.placeholder.com/200x140?text=Anydaly', tipo:'Mensuales', marca:'Anydaly' },
+      { nombre:'Fresh Look', desc:'Descripción del producto', img:'https://via.placeholder.com/200x140?text=Fresh+Look', tipo:'Colores', marca:'FreshLook' },
+      { nombre:'Anydaly', desc:'Descripción del producto', img:'https://via.placeholder.com/200x140?text=Anydaly', tipo:'Diarios', marca:'Anydaly' },
+      { nombre:'Opharcil', desc:'Descripción del producto', img:'https://via.placeholder.com/200x140?text=Opharcil', tipo:'Tóricos', marca:'Opharcil' }
+    ];
+
+    const productList = document.getElementById('productList');
+    const checkboxes = document.querySelectorAll('.sidebar input[type=checkbox]');
+
+    function renderProducts(filtros){
+      productList.innerHTML = '';
+      let filtrados = productos.filter(p => {
+        if (filtros.length === 0) return true;
+        return filtros.some(f => p.tipo.includes(f) || p.marca.includes(f));
+      });
+      filtrados.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'product';
+        div.innerHTML = `
+          <img src="${p.img}" alt="${p.nombre}">
+          <div class="name">${p.nombre}</div>
+          <div class="desc">${p.desc}</div>
+        `;
+        productList.appendChild(div);
+      });
+    }
+
+    renderProducts([]);
+
+    checkboxes.forEach(cb =>
+      cb.addEventListener('change', ()=>{
+        const activos = Array.from(checkboxes)
+          .filter(x=>x.checked)
+          .map(x=>x.value);
+        renderProducts(activos);
+      })
+    );
+  </script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/activeNav.js"></script>
+</body>
+</html>

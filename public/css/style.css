@@ -1,0 +1,93 @@
+@font-face{font-family:'CenturyGothicFallback';src:local('Century Gothic'),local('CenturyGothic');}
+
+    :root{
+      --purple:#8f5bd7;
+      --gold:#cda84a;
+      --muted:#f4f4f6;
+      --text:#222;
+      --card-shadow:0 6px 18px rgba(20,20,30,0.06);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:CenturyGothicFallback,Arial,sans-serif;
+      background:white;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+/* ===============================
+   NAVBAR MRA
+================================ */
+
+.mra-header {
+  width: 100%;
+  background: #fff;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo img {
+  height: 45px;
+}
+
+/* SEARCH */
+.search {
+  flex: 1;
+  max-width: 450px;
+  margin: 0 40px;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  border: 1px solid #ddd;
+  background: #fbfbfd;
+  outline: none;
+}
+
+/* ICONS */
+.icons {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+/* MAIN NAV */
+.main-nav {
+  display: flex;
+  gap: 24px;
+  padding: 12px 28px;
+  border-bottom: 1px solid #eee;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #222;
+  font-family: "Century Gothic", sans-serif;
+}
+
+.main-nav a.active {
+  color: #5b2c83; /* morado MRA */
+  font-weight: 700;
+}

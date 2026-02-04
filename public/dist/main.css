@@ -1,6 +1,12 @@
 @charset "UTF-8";
 .bg-morado-claro {
-  background-color: #E0C6EE;
+  background-image: url('../img/fondoMRA.jpg');
+  background-size: cover;
+}
+
+.bg-fondo {
+  background-color: rgba(0, 100, 150, 0.125);
+  
 }
 
 .navbar-custom {

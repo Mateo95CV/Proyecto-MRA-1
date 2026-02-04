@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin | Citas</title>
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="admin-page admin-citas">
+
+  <!-- HEADER ADMIN -->
+  <header class="admin-header">
+    <h1>Gestión de Citas</h1>
+  </header>
+
+  <!-- CONTENEDOR ADMIN -->
+  <div class="admin-container">
+
+    <!-- SIDEBAR (COMPONENTE) -->
+    <div id="admin-sidebar"></div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="admin-main">
+
+      <!-- FORMULARIO -->
+      <section class="admin-section">
+        <h2>Agregar / Editar cita</h2>
+
+        <form id="citaForm" class="admin-form">
+          <input type="hidden" id="citaId">
+
+          <input type="text" id="cliente" placeholder="Nombre del cliente" required>
+          <input type="date" id="fecha" required>
+          <input type="time" id="hora" required>
+
+          <select id="estado">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Confirmada">Confirmada</option>
+            <option value="Cancelada">Cancelada</option>
+          </select>
+
+          <button type="submit" class="btn-primary">Guardar cita</button>
+        </form>
+      </section>
+
+      <!-- TABLA -->
+      <section class="admin-section">
+        <h2>Listado de citas</h2>
+
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="citasTable"></tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="/public/js/loadSidebar.js"></script>
+  <script src="citas.js"></script>
+</body>
+</html>

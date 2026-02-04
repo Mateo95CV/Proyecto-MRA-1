@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MRA - Monturas</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons (si los usas) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+  
+    /* ========================================= */
+    /*                LAYOUT                     */
+    /* ========================================= */
+    .container{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:20px;
+      padding:28px;
+    }
+
+    /* ========================================= */
+    /*                SIDEBAR                     */
+    /* ========================================= */
+    .sidebar{
+      background:#fff;
+      border:1px solid #e5e4f2;
+      border-radius:8px;
+      padding:18px;
+      box-shadow:var(--card-shadow);
+    }
+    .sidebar h3{
+      margin-bottom:12px;
+      font-size:18px;
+      color:var(--purple);
+    }
+    .filter-group{
+      margin-bottom:18px;
+    }
+    .filter-group h4{
+      font-size:14px;
+      margin-bottom:8px;
+      color:#444;
+    }
+    .filter-group label{
+      display:block;
+      margin-bottom:6px;
+      font-size:14px;
+      cursor:pointer;
+    }
+
+    /* ========================================= */
+    /*                PRODUCTOS                  */
+    /* ========================================= */
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+      gap:22px;
+    }
+    .product{
+      border:1px solid #eae9f5;
+      border-radius:10px;
+      padding:14px;
+      text-align:center;
+      box-shadow:var(--card-shadow);
+      background:white;
+      transition:transform .2s ease;
+    }
+    .product:hover{
+      transform:translateY(-4px);
+    }
+    .product img{
+      width:100%;
+      height:160px;
+      object-fit:contain;
+      margin-bottom:8px;
+      border-radius:6px;
+    }
+    .product .name{
+      font-weight:600;
+      font-size:16px;
+      color:#222;
+      margin-bottom:4px;
+    }
+    .product .desc{
+      font-size:13px;
+      color:#777;
+    }
+    .product .price{
+      margin-top:8px;
+      font-weight:700;
+      color:var(--gold);
+    }
+
+    @media(max-width:900px){
+      .container{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h3>Marcas de Monturas</h3>
+
+      <div class="filter-group">
+        <h4>Marcas populares</h4>
+        <label><input type="checkbox" value="Rayban"> Ray-Ban</label>
+        <label><input type="checkbox" value="Oakley"> Oakley</label>
+        <label><input type="checkbox" value="Prada"> Prada</label>
+        <label><input type="checkbox" value="Vogue"> Vogue</label>
+        <label><input type="checkbox" value="Dior"> Dior</label>
+        <label><input type="checkbox" value="Gucci"> Gucci</label>
+      </div>
+    </aside>
+
+    <!-- GRID DE PRODUCTOS -->
+    <section class="products" id="productList">
+
+      <div class="product" data-marca="Rayban">
+        <img src="img/RaybanAviator.jpg" alt="Rayban Aviator">
+        <div class="name">Ray-Ban Aviator</div>
+        <div class="desc">Lentes de sol clásicos</div>
+        <div class="price">$299.900</div>
+      </div>
+
+      <div class="product" data-marca="Oakley">
+        <img src="img/OakleySport.jpg" alt="Oakley Sport">
+        <div class="name">Oakley Sport</div>
+        <div class="desc">Lentes deportivos resistentes</div>
+        <div class="price">$459.900</div>
+      </div>
+
+      <div class="product" data-marca="Transitions">
+        <img src="img/Transitions.jpeg" alt="Transitions">
+        <div class="name">Transitions</div>
+        <div class="desc">Se adaptan al sol automáticamente</div>
+        <div class="price">$199.900</div>
+      </div>
+
+      <div class="product" data-marca="Prada">
+        <img src="img/Prada.jpg" alt="Prada Luxury">
+        <div class="name">Prada Luxury</div>
+        <div class="desc">Montura de lujo italiana</div>
+        <div class="price">$899.900</div>
+      </div>
+
+      <div class="product" data-marca="Cooper">
+        <img src="img/CooperVision.jpg" alt="Cooper Vision">
+        <div class="name">Cooper Vision</div>
+        <div class="desc">Monturas modernas</div>
+        <div class="price">$119.900</div>
+      </div>
+
+      <div class="product" data-marca="Essilor">
+        <img src="img/Essilor.jpg" alt="Essilor Crizal">
+        <div class="name">Essilor Crizal</div>
+        <div class="desc">Tratamiento premium</div>
+        <div class="price">$149.900</div>
+      </div>
+
+    </section>
+
+  </main>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/activeNav.js"></script>
+</body>
+</html>
