@@ -1,20 +1,28 @@
-@font-face{font-family:'CenturyGothicFallback';src:local('Century Gothic'),local('CenturyGothic');}
+@font-face {
+  font-family: 'CenturyGothicFallback';
+  src: local('Century Gothic'), local('CenturyGothic');
+}
 
-    :root{
-      --purple:#8f5bd7;
-      --gold:#cda84a;
-      --muted:#f4f4f6;
-      --text:#222;
-      --card-shadow:0 6px 18px rgba(20,20,30,0.06);
-    }
+:root {
+  --purple: #8f5bd7;
+  --gold: #cda84a;
+  --muted: #f4f4f6;
+  --text: #222;
+  --card-shadow: 0 6px 18px rgba(20, 20, 30, 0.06);
+}
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:CenturyGothicFallback,Arial,sans-serif;
-      background:white;
-      color:var(--text);
-      line-height:1.6;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+body {
+  font-family: CenturyGothicFallback, Arial, sans-serif;
+  background: white;
+  color: var(--text);
+  line-height: 1.6;
+}
 
 /* ===============================
    NAVBAR MRA
@@ -88,6 +96,226 @@
 }
 
 .main-nav a.active {
-  color: #5b2c83; /* morado MRA */
+  color: #5b2c83;
+  /* morado MRA */
   font-weight: 700;
+}
+
+/* CSS comun entre about y citas */
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  color: var(--purple);
+  margin-bottom: 14px;
+}
+
+p.subtitle {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* CSS about */
+
+section.info {
+  text-align: left;
+  display: grid;
+  gap: 24px;
+}
+
+.info-block {
+  background: var(--muted);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.info-block h3 {
+  color: var(--purple);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-block ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.info-block ul li {
+  margin-bottom: 6px;
+}
+
+.icon {
+  font-size: 18px;
+  color: var(--gold);
+}
+
+/* CSS citas*/
+
+form {
+  background: var(--muted);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  display: grid;
+  gap: 18px
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px
+}
+
+.input-citas,
+select,
+textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  font-size: 14px;
+  width: 100%
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px
+}
+
+button {
+  background: var(--purple);
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px
+}
+
+button:hover {
+  background: #7b47c8
+}
+
+/* CSS en comun lentes, monturas, productos */
+
+/* ------------------------------ */
+/* LAYOUT GENERAL */
+/* ------------------------------ */
+.container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  padding: 28px;
+}
+
+/* ---------------------------------------- */
+/* SIDEBAR */
+/* ---------------------------------------- */
+.sidebar {
+  background: #fff;
+  border: 1px solid #e5e4f2;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: var(--card-shadow);
+}
+
+.sidebar h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: var(--purple);
+}
+
+.filter-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.filter-group h4 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+/* ---------------------------------------- */
+/* PRODUCTOS */
+/* ---------------------------------------- */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  border: 1px solid #eae9f5;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: transform .2s ease;
+  background: white;
+}
+
+.product:hover {
+  transform: translateY(-4px)
+}
+
+.product img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.product .name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.product .desc {
+  font-size: 13px;
+  color: #777;
+}
+
+@media(max-width:900px) {
+  .container {
+    grid-template-columns: 1fr
+  }
+}
+
+/* PROMOCIONES */
+
+.promo-card {
+  background: var(--muted);
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: 0.25s;
+}
+
+.promo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.promo-card img {
+    border-radius: 10px;
 }

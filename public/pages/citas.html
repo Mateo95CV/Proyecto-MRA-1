@@ -14,20 +14,6 @@
 <link rel="stylesheet" href="../css/style.css">
 
   <style>
-    
-
-
-    main{max-width:700px;margin:40px auto;padding:20px}
-    h2{text-align:center;color:var(--purple);margin-bottom:10px}
-    p.subtitle{text-align:center;color:#555;margin-bottom:30px}
-
-    form{background:var(--muted);padding:30px;border-radius:12px;box-shadow:var(--card-shadow);display:grid;gap:18px}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    input,select,textarea{padding:10px;border-radius:8px;border:1px solid #ddd;font-family:inherit;font-size:14px;width:100%}
-    textarea{resize:vertical;min-height:80px}
-    button{background:var(--purple);color:white;font-weight:600;padding:12px;border:none;border-radius:8px;cursor:pointer;font-size:16px}
-    button:hover{background:#7b47c8}
-
     @media(max-width:700px){.row{grid-template-columns:1fr}}
     @font-face {
     font-family:'CenturyGothicFallback';
@@ -45,11 +31,11 @@
 
     <form id="formCita">
       <div class="row">
-        <input type="text" id="nombre" placeholder="Nombre completo" required>
-        <input type="email" id="correo" placeholder="Correo electrónico" required>
+        <input class="input-citas" type="text" id="nombre" placeholder="Nombre completo" required>
+        <input class="input-citas" type="email" id="correo" placeholder="Correo electrónico" required>
       </div>
       <div class="row">
-        <input type="tel" id="telefono" placeholder="Teléfono" required>
+        <input class="input-citas" type="tel" id="telefono" placeholder="Teléfono" required>
         <select id="tipo" required>
           <option value="">Tipo de cita</option>
           <option>Examen visual</option>
@@ -58,7 +44,7 @@
         </select>
       </div>
       <div class="row">
-        <input type="datetime-local" id="fecha" required>
+        <input class="input-citas" type="datetime-local" id="fecha" required>
         <textarea id="comentarios" placeholder="Comentarios (opcional)"></textarea>
       </div>
       <button type="submit">Reservar Ahora</button>

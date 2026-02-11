@@ -1,0 +1,36 @@
+const express = require("express");
+const router = express.Router();
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const { poolPromise, sql } = require("./db");
+
+const SECRET = "mra_secret_key"; // luego se mueve a .env
+
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  const pool = await poolPromise;
+  const result = await pool.request()
+    .input("email", sql.NVarChar, email)
+    .query("SELECT * FROM usuarios WHERE email=@email AND estado='Activo'");
+
+  const user = result.recordset[0];
+  if (!user) return res.status(401).json({ message: "Usuario no encontrado" });
+
+  const valid = await bcrypt.compare(password, user.password);
+  if (!valid) return res.status(401).json({ message: "Contraseña incorrecta" });
+
+  const token = jwt.sign(
+    { id: user.id, rol: user.rol },
+    SECRET,
+    { expiresIn: "8h" }
+  );
+
+  res.json({
+    token,
+    rol: user.rol,
+    nombre: user.nombre
+  });
+});
+
+module.exports = router;

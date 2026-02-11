@@ -1,3 +1,10 @@
+const token = localStorage.getItem("token");
+const rol = localStorage.getItem("rol");
+
+if (!token || rol !== "Admin") {
+  window.location.href = "/public/usuarios/login.html";
+}
+
 let products = [];
 let editingId = null;
 
@@ -65,3 +72,8 @@ function deleteProduct(id) {
     render();
   }
 }
+
+document.getElementById("logout").addEventListener("click", () => {
+localStorage.clear();
+window.location.href = "/public/usuarios/login.html";
+});

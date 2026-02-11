@@ -12,95 +12,7 @@
 
   <!-- CSS propio -->
   <link rel="stylesheet" href="../css/style.css">
-  <style>
-  
-    /* ========================================= */
-    /*                LAYOUT                     */
-    /* ========================================= */
-    .container{
-      display:grid;
-      grid-template-columns:260px 1fr;
-      gap:20px;
-      padding:28px;
-    }
-
-    /* ========================================= */
-    /*                SIDEBAR                     */
-    /* ========================================= */
-    .sidebar{
-      background:#fff;
-      border:1px solid #e5e4f2;
-      border-radius:8px;
-      padding:18px;
-      box-shadow:var(--card-shadow);
-    }
-    .sidebar h3{
-      margin-bottom:12px;
-      font-size:18px;
-      color:var(--purple);
-    }
-    .filter-group{
-      margin-bottom:18px;
-    }
-    .filter-group h4{
-      font-size:14px;
-      margin-bottom:8px;
-      color:#444;
-    }
-    .filter-group label{
-      display:block;
-      margin-bottom:6px;
-      font-size:14px;
-      cursor:pointer;
-    }
-
-    /* ========================================= */
-    /*                PRODUCTOS                  */
-    /* ========================================= */
-    .products{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-      gap:22px;
-    }
-    .product{
-      border:1px solid #eae9f5;
-      border-radius:10px;
-      padding:14px;
-      text-align:center;
-      box-shadow:var(--card-shadow);
-      background:white;
-      transition:transform .2s ease;
-    }
-    .product:hover{
-      transform:translateY(-4px);
-    }
-    .product img{
-      width:100%;
-      height:160px;
-      object-fit:contain;
-      margin-bottom:8px;
-      border-radius:6px;
-    }
-    .product .name{
-      font-weight:600;
-      font-size:16px;
-      color:#222;
-      margin-bottom:4px;
-    }
-    .product .desc{
-      font-size:13px;
-      color:#777;
-    }
-    .product .price{
-      margin-top:8px;
-      font-weight:700;
-      color:var(--gold);
-    }
-
-    @media(max-width:900px){
-      .container{grid-template-columns:1fr}
-    }
-  </style>
+ 
 </head>
 
 <body>
@@ -115,13 +27,12 @@
       <h3>Marcas de Monturas</h3>
 
       <div class="filter-group">
-        <h4>Marcas populares</h4>
-        <label><input type="checkbox" value="Rayban"> Ray-Ban</label>
-        <label><input type="checkbox" value="Oakley"> Oakley</label>
-        <label><input type="checkbox" value="Prada"> Prada</label>
-        <label><input type="checkbox" value="Vogue"> Vogue</label>
-        <label><input type="checkbox" value="Dior"> Dior</label>
-        <label><input type="checkbox" value="Gucci"> Gucci</label>
+        <label><input class="check" type="checkbox" value="Rayban"> Ray-Ban</label>
+        <label><input class="check" type="checkbox" value="Oakley"> Oakley</label>
+        <label><input class="check" type="checkbox" value="Prada"> Prada</label>
+        <label><input class="check" type="checkbox" value="Vogue"> Vogue</label>
+        <label><input class="check" type="checkbox" value="Dior"> Dior</label>
+        <label><input class="check" type="checkbox" value="Gucci"> Gucci</label>
       </div>
     </aside>
 

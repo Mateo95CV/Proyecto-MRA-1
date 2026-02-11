@@ -14,7 +14,7 @@
   <!-- HEADER ADMIN -->
   <header class="admin-header">
     <h1>Panel de Administración</h1>
-    <button class="logout-btn">Cerrar sesión</button>
+    <button class="logout-btn" id="logout">Cerrar sesión</button>
   </header>
 
   <div class="admin-container">
@@ -75,6 +75,13 @@
 
     </main>
   </div>
+
+  <script>
+    document.getElementById("logout").addEventListener("click", () => {
+    localStorage.clear();
+    window.location.href = "/public/usuarios/login.html";
+    });
+  </script>
 
   <script src="/public/js/loadSidebar.js"></script>
 
