@@ -29,7 +29,6 @@
         <label><input class="check" type="checkbox" value="Rayban"> Ray-Ban</label>
         <label><input class="check" type="checkbox" value="Oakley"> Oakley</label>
         <label><input class="check" type="checkbox" value="Prada"> Prada</label>
-        <label><input class="check" type="checkbox" value="Vogue"> Vogue</label>
         <label><input class="check" type="checkbox" value="Dior"> Dior</label>
         <label><input class="check" type="checkbox" value="Gucci"> Gucci</label>
       </div>
@@ -38,37 +37,49 @@
     <!-- GRID DE PRODUCTOS -->
     <section class="products" id="productList">
 
-      <div class="product" data-marca="Rayban">
-        <img src="/public/img/RaybanAviator.jpg" alt="Rayban Aviator">
-        <div class="name">Ray-Ban Aviator</div>
-        <div class="desc">Lentes de sol clásicos</div>
-        <div class="price">$299.900</div>
-      </div>
-
-      <div class="product" data-marca="Oakley">
-        <img src="/public/img/OakleySport.jpg" alt="Oakley Sport">
-        <div class="name">Oakley Sport</div>
-        <div class="desc">Lentes deportivos resistentes</div>
-        <div class="price">$459.900</div>
-      </div>
-
-      <div class="product" data-marca="Transitions">
-        <img src="/public/img/Transitions.jpeg" alt="Transitions">
-        <div class="name">Transitions</div>
-        <div class="desc">Se adaptan al sol automáticamente</div>
-        <div class="price">$199.900</div>
-      </div>
-
-      <div class="product" data-marca="Prada">
-        <img src="/public/img/Prada.jpg" alt="Prada Luxury">
-        <div class="name">Prada Luxury</div>
-        <div class="desc">Montura de lujo italiana</div>
-        <div class="price">$899.900</div>
-      </div>
-
     </section>
 
   </main>
+  <script>
+    const productos = [
+      { nombre:'RayBan Aviator', desc:'Lentes de sol clasicos', img:'/public/img/RaybanAviator.jpg', tipo:'Sol', marca:'Rayban' },
+      { nombre:'Oakley Sports', desc:'Lentes deportivos resistentes', img:'/public/img/OakleySport.jpg', tipo:'Sol', marca:'Oakley' },
+      { nombre:'Transitions', desc:'Se adaptan al sol automáticamente', img:'/public/img/Transitions.jpeg', tipo:'Sol', marca:'Transitions' },
+      { nombre:'Prada Luxury', desc:'Montura de lujo italiana', img:'/public/img/Prada.jpg', tipo:'Sol', marca:'Prada' }
+    ];
+
+    const productList = document.getElementById('productList');
+    const checkboxes = document.querySelectorAll('.sidebar input[type=checkbox]');
+
+    function renderProducts(filtros){
+      productList.innerHTML = '';
+      let filtrados = productos.filter(p => {
+        if (filtros.length === 0) return true;
+        return filtros.some(f => p.tipo.includes(f) || p.marca.includes(f));
+      });
+      filtrados.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'product';
+        div.innerHTML = `
+          <img src="${p.img}" alt="${p.nombre}">
+          <div class='name'>${p.nombre}</div>
+          <div class='desc'>${p.desc}</div>
+        `;
+        productList.appendChild(div);
+      });
+    }
+
+    renderProducts([]);
+
+    checkboxes.forEach(cb =>
+      cb.addEventListener('change', () => {
+        const activos = Array.from(checkboxes)
+          .filter(x => x.checked)
+          .map(x => x.value);
+        renderProducts(activos);
+      })
+    );
+  </script>
   <script src="../js/navbar.js"></script>
   <script src="../js/activeNav.js"></script>
 </body>

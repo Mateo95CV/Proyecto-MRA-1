@@ -321,54 +321,40 @@ button:hover {
 }
 
 /* Tecnologias */
+
 .tecnologias-container{
-      max-width:1100px;
-      margin:40px auto;
-      padding:28px;
-      background:#f8f9fa;
-      border-radius:12px;
-      box-shadow:var(--card-shadow);
-    }
+  max-width:1100px;
+  margin:40px auto;
+  padding:28px;
+  background:#f8f9fa;
+  border-radius:12px;
+  box-shadow:var(--card-shadow);
+}
 
-    .tecnologias-title{
-      text-align:center;
-      font-weight:700;
-      font-size:26px;
-      margin-bottom:25px;
-      font-family:'Century Gothic';
-    }
+.tecnologias-title{
+  text-align:center;
+  font-weight:700;
+  font-size:26px;
+  margin-bottom:25px;
+  font-family:'Century Gothic';
+}
 
-    .row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
-    }
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
 
-    .item{
-      display:flex;
-      gap:15px;
-      margin-bottom:22px;
-      line-height:1.4;
-    }
+.item{
+  display:flex;
+  gap:15px;
+  margin-bottom:22px;
+  line-height:1.4;
+}
 
-    .item-icon{
-      font-size:32px;
-    }
-
-    @media(max-width:900px){
-      .row{
-        grid-template-columns:1fr;
-      }
-    }
-
-    .tecnologias-box{
-      max-width:1150px;
-      margin:50px auto;
-      padding:40px;
-      background:#f8f9fa;
-      border-radius:14px;
-      box-shadow:var(--card-shadow);
-    }
+.item-icon{
+  font-size:32px;
+}
 
 .tecnologias-title{
   text-align:center;
@@ -410,4 +396,73 @@ button:hover {
   margin-top:10px;
   line-height:1.7;
   padding-left:20px;
+}
+
+.tecnologias-box{
+  max-width:1150px;
+  margin:50px auto;
+  padding:40px;
+  background:#f8f9fa;
+  border-radius:14px;
+  box-shadow:var(--card-shadow);
+}
+
+/* VISAGISMO */
+
+.visagismo-container{
+  max-width:900px;
+  margin:60px auto;
+  padding:40px;
+  background:#f9f9fc;
+  border-radius:16px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.05);
+}
+
+.visagismo-container h2{
+  text-align:center;
+  color:var(--purple);
+  margin-bottom:20px;
+}
+
+.visagismo-form{
+  display:grid;
+  gap:20px;
+  margin-top:30px;
+}
+
+.visagismo-form select{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  font-family:inherit;
+}
+
+.btn-visagismo{
+  background:var(--purple);
+  color:white;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.resultado{
+  margin-top:40px;
+  padding:20px;
+  background:white;
+  border-radius:12px;
+  border-left:5px solid var(--gold);
+  display:none;
+}
+
+.cta-cita{
+  margin-top:20px;
+  display:inline-block;
+  padding:10px 18px;
+  background:var(--gold);
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
 }

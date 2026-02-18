@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Visagismo | MRA</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+    <!-- Aquí llamas tu navbar.html -->
+
+    <div class="visagismo-container">
+
+    <h2>Asistente de Visagismo</h2>
+    <p style="text-align:center;color:#555;">
+        Descubre qué tipo de montura armoniza mejor con tu rostro y estilo.
+    </p>
+
+    <form class="visagismo-form" id="visagismoForm">
+
+        <label>Forma del rostro</label>
+        <select id="rostro" required>
+        <option value="">Seleccionar</option>
+        <option value="ovalado">Ovalado</option>
+        <option value="redondo">Redondo</option>
+        <option value="cuadrado">Cuadrado</option>
+        <option value="alargado">Alargado</option>
+        </select>
+
+        <label>Tono de piel</label>
+        <select id="piel" required>
+        <option value="">Seleccionar</option>
+        <option value="clara">Clara</option>
+        <option value="media">Media</option>
+        <option value="oscura">Oscura</option>
+        </select>
+
+        <label>Estilo personal</label>
+        <select id="estilo" required>
+        <option value="">Seleccionar</option>
+        <option value="clasico">Clásico</option>
+        <option value="moderno">Moderno</option>
+        <option value="casual">Casual</option>
+        </select>
+
+        <button type="submit" class="btn-visagismo">
+        Ver recomendación
+        </button>
+
+    </form>
+
+    <div class="resultado" id="resultado"></div>
+
+    </div>
+
+<script src="/public/js/visagismo.js"></script>
+<script src="/public/js/navbar.js"></script>
+</body>
+</html>
