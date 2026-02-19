@@ -13,206 +13,7 @@
 
   <!-- CSS propio -->
   <link rel="stylesheet" href="../css/style.css">
-  <style>
-    /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 28px;
-      padding: 28px
-    }
-
-    .promo {
-      background: var(--purple);
-      color: white;
-      padding: 28px;
-      border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      box-shadow: var(--card-shadow)
-    }
-
-    .promo h2 {
-      margin: 0 0 8px 0
-    }
-
-    .promo p {
-      margin: 0 0 14px 0;
-      opacity: 0.95
-    }
-
-    .promo .cta {
-      background: var(--accent-cta);
-      color: var(--purple);
-      padding: 10px 14px;
-      border-radius: 6px;
-      font-weight: 700;
-      display: inline-block
-    }
-
-    .hero-image {
-      background: #f2f2f4;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      min-height: 240px
-    }
-
-    /* Recomendado */
-    .section {
-      padding: 18px 28px
-    }
-
-    .section h3 {
-      margin: 0 0 18px;
-      font-size: 22px
-    }
-
-    .carousel {
-      display: flex;
-      align-items: center;
-      gap: 12px
-    }
-
-    .carousel .arrow {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      border: 1px solid #eee;
-      display: grid;
-      place-items: center;
-      cursor: pointer
-    }
-
-    .product-track {
-      display: flex;
-      gap: 18px;
-      overflow: hidden;
-      padding: 6px
-    }
-
-    .product {
-      min-width: 160px;
-      background: white;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #f0eff6;
-      text-align: center
-    }
-
-    .product img {
-      width: 100%;
-      height: 96px;
-      object-fit: contain
-    }
-
-    .product .name {
-      font-weight: 700;
-      margin-top: 8px
-    }
-
-    .product .ref {
-      font-size: 12px;
-      color: #666;
-      margin-top: 6px
-    }
-
-    /* Marcas */
-    .brands {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      justify-content: center;
-      padding: 18px 28px;
-      flex-wrap: wrap
-    }
-
-    .brand {
-      min-width: 100px;
-      text-align: center;
-      padding: 12px;
-      border-radius: 8px
-    }
-
-    .brand img {
-      max-width: 100%;
-      height: 36px;
-      object-fit: contain
-    }
-
-    /* Appointment form */
-    .appt {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      background: linear-gradient(180deg, var(--purple), #7b47c8);
-      color: white;
-      padding: 14px;
-      border-radius: 12px;
-      box-shadow: var(--card-shadow);
-      width: 300px
-    }
-
-    .appt h4 {
-      margin: 0 0 6px 0
-    }
-
-    .appt form {
-      display: flex;
-      flex-direction: column;
-      gap: 8px
-    }
-
-    .appt input,
-    .appt select {
-      padding: 8px;
-      border-radius: 8px;
-      border: none
-    }
-
-    .appt .whatsapp {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      background: var(--gold);
-      color: #1a1a1a;
-      padding: 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700
-    }
-
-    /* Responsive */
-    @media(max-width:900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .topbar {
-        padding: 12px
-      }
-
-      .section,
-      .brands {
-        padding: 12px
-      }
-
-      .appt {
-        width: 92%;
-        left: 4%;
-        right: 4%
-      }
-    }
-  </style>
+  
 </head>
 
 <body>
@@ -294,12 +95,11 @@
   </main>
 
   <script>
-    // Carousel simple
     const track = document.getElementById('track');
     const prev = document.getElementById('prev');
     const next = document.getElementById('next');
     let pos = 0;
-    const cardWidth = 178; // approx product width + gap
+    const cardWidth = 178; 
 
     function updateTrack() {
       track.style.transform = `translateX(${pos}px)`;
@@ -314,22 +114,6 @@
       updateTrack();
     });
 
-    // Appointment -> WhatsApp message builder
-    const whatsappLink = document.getElementById('whatsapp');
-    const apptForm = document.getElementById('apptForm');
-
-    apptForm.addEventListener('input', () => {
-      const name = document.getElementById('name').value || '[Nombre]';
-      const phone = document.getElementById('phone').value || '[Tel]';
-      const service = document.getElementById('service').value;
-      // Cambia el número de WhatsApp (sin signos) por el tuyo: 57XXXXXXXXX
-      const number = '57XXXXXXXXX';
-      const text = encodeURIComponent(`Hola, quiero reservar una cita. Nombre: ${name} - Tel: ${phone} - Servicio: ${service}`);
-      whatsappLink.href = `https://wa.me/${number}?text=${text}`;
-    });
-
-    // Inicializa link
-    apptForm.dispatchEvent(new Event('input'));
   </script>
   <script src="../js/navbar.js"></script>
   <script src="../js/activeNav.js"></script>

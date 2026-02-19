@@ -14,10 +14,6 @@
 
   <style>
     @media(max-width:700px){.row{grid-template-columns:1fr}}
-    @font-face {
-    font-family:'CenturyGothicFallback';
-    src:local('Century Gothic'), local('CenturyGothic');
-    }
   </style>
 </head>
 <body>
@@ -59,7 +55,7 @@
       const fecha = document.getElementById('fecha').value;
       const telefono = document.getElementById('telefono').value;
       const text = encodeURIComponent(`Hola, soy ${nombre}. Quiero agendar una cita de tipo ${tipo} el ${fecha}. Tel: ${telefono}`);
-      const numero = '57XXXXXXXXX'; // reemplazar con número real
+      const numero = '573146030432';
       window.open(`https://wa.me/${numero}?text=${text}`, '_blank');
     });
   </script>

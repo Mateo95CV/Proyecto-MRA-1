@@ -97,8 +97,211 @@ body {
 
 .main-nav a.active {
   color: #5b2c83;
-  /* morado MRA */
   font-weight: 700;
+}
+
+/* INDEX */
+
+.hero {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  padding: 28px
+}
+
+.promo {
+  background: var(--purple);
+  color: white;
+  padding: 28px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--card-shadow)
+}
+
+.promo h2 {
+  margin: 0 0 8px 0
+}
+
+.promo p {
+  margin: 0 0 14px 0;
+  opacity: 0.95
+}
+
+.promo .cta {
+  background: var(--accent-cta);
+  color: var(--purple);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  display: inline-block
+}
+
+.hero-image {
+  background: #f2f2f4;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 240px
+}
+
+/* Recomendado */
+.section {
+  padding: 18px 28px
+}
+
+.section h3 {
+  margin: 0 0 18px;
+  font-size: 22px
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.carousel .arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  display: grid;
+  place-items: center;
+  cursor: pointer
+}
+
+.product {
+  min-width: 160px;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #f0eff6;
+  text-align: center
+}
+
+.product img {
+  width: 100%;
+  height: 96px;
+  object-fit: contain
+}
+
+.product .name {
+  font-weight: 700;
+  margin-top: 8px
+}
+
+.product .ref {
+  font-size: 12px;
+  color: #666;
+  margin-top: 6px
+}
+
+/* Marcas */
+.brands {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 28px;
+  flex-wrap: wrap
+}
+
+.brand {
+  min-width: 100px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px
+}
+
+.brand img {
+  max-width: 100%;
+  height: 36px;
+  object-fit: contain
+}
+
+/* Appointment form */
+.appt {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: linear-gradient(180deg, var(--purple), #7b47c8);
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  width: 300px
+}
+
+.appt h4 {
+  margin: 0 0 6px 0
+}
+
+.appt form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px
+}
+
+.appt input,
+.appt select {
+  padding: 8px;
+  border-radius: 8px;
+  border: none
+}
+
+.appt .whatsapp {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: var(--gold);
+  color: #1a1a1a;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700
+}
+
+/* Responsive */
+@media(max-width:900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    padding: 12px
+  }
+
+  .section,
+  .brands {
+    padding: 12px
+  }
+  
+  .appt {
+    width: 92%;
+    left: 4%;
+    right: 4%
+  }
+}
+
+.product-track {
+  display: flex;
+  gap: 18px;
+  transition: transform 0.4s ease-out;   
+  will-change: transform;            
+}
+
+.product {
+  flex: 0 0 160px;
 }
 
 /* CSS comun entre about y citas */
@@ -180,7 +383,6 @@ textarea {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ddd;
-  font-family: inherit;
   font-size: 14px;
   width: 100%
 }
@@ -261,15 +463,6 @@ button:hover {
   gap: 20px;
 }
 
-.product {
-  border: 1px solid #eae9f5;
-  border-radius: 10px;
-  padding: 12px;
-  text-align: center;
-  box-shadow: var(--card-shadow);
-  transition: transform .2s ease;
-  background: white;
-}
 
 .product:hover {
   transform: translateY(-4px)
@@ -312,12 +505,12 @@ button:hover {
 }
 
 .promo-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .promo-card img {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 /* Tecnologias */
