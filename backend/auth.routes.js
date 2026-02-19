@@ -4,6 +4,10 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { poolPromise, sql } = require("./db");
 
+const auth = require("./middlewares/auth");
+const roles = require("./middlewares/roles");
+
+
 const SECRET = "mra_secret_key"; // luego se mueve a .env
 
 router.post("/login", async (req, res) => {

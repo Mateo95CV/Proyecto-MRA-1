@@ -5,75 +5,79 @@ if (!token || rol !== "Admin") {
   window.location.href = "/public/usuarios/login.html";
 }
 
-let products = [];
-let editingId = null;
-
 const form = document.getElementById("productForm");
 const table = document.getElementById("productTable");
 
-form.addEventListener("submit", e => {
+// CREAR PRODUCTO
+form.addEventListener("submit", async e => {
   e.preventDefault();
 
   const product = {
-    id: editingId ?? Date.now(),
-    name: name.value,
-    category: category.value,
-    price: price.value,
-    stock: stock.value,
-    status: status.value
+    nombre: document.getElementById("name").value,
+    categoria: document.getElementById("category").value,
+    precio: document.getElementById("price").value,
+    stock: document.getElementById("stock").value,
+    estado: document.getElementById("status").value
   };
 
-  if (editingId) {
-    products = products.map(p => p.id === editingId ? product : p);
-    editingId = null;
-  } else {
-    products.push(product);
-  }
+  await fetch("http://localhost:3000/api/productos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify(product)
+  });
 
   form.reset();
-  render();
+  cargarProductos();
 });
 
-function render() {
+// LISTAR PRODUCTOS
+async function cargarProductos() {
+  const res = await fetch("http://localhost:3000/api/productos", {
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  });
+
+  const productos = await res.json();
+
   table.innerHTML = "";
 
-  products.forEach(p => {
+  productos.forEach(p => {
     table.innerHTML += `
       <tr>
-        <td>${p.name}</td>
-        <td>${p.category}</td>
-        <td>$${p.price}</td>
+        <td>${p.nombre}</td>
+        <td>${p.categoria}</td>
+        <td>$${p.precio}</td>
         <td>${p.stock}</td>
-        <td>${p.status}</td>
-        <td class="actions">
-          <button class="edit" onclick="editProduct(${p.id})">Editar</button>
-          <button class="delete" onclick="deleteProduct(${p.id})">Eliminar</button>
+        <td>${p.estado}</td>
+        <td>
+          <button onclick="eliminar(${p.id})">Eliminar</button>
         </td>
       </tr>
     `;
   });
 }
 
-function editProduct(id) {
-  const p = products.find(p => p.id === id);
+// ELIMINAR PRODUCTO
+async function eliminar(id) {
+  await fetch(`http://localhost:3000/api/productos/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  });
 
-  name.value = p.name;
-  category.value = p.category;
-  price.value = p.price;
-  stock.value = p.stock;
-  status.value = p.status;
-
-  editingId = id;
+  cargarProductos();
 }
 
-function deleteProduct(id) {
-  if (confirm("¿Eliminar producto?")) {
-    products = products.filter(p => p.id !== id);
-    render();
-  }
-}
+// CARGAR AL INICIAR
+cargarProductos();
 
+// LOGOUT
 document.getElementById("logout").addEventListener("click", () => {
-localStorage.clear();
-window.location.href = "/public/usuarios/login.html";
+  localStorage.clear();
+  window.location.href = "/public/usuarios/login.html";
 });

@@ -371,12 +371,6 @@ form {
   gap: 18px
 }
 
-.row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px
-}
-
 .input-citas,
 select,
 textarea {
@@ -502,6 +496,9 @@ button:hover {
   text-align: center;
   box-shadow: var(--card-shadow);
   transition: 0.25s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .promo-card:hover {

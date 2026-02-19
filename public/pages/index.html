@@ -92,10 +92,17 @@
           alt="Gucci"></div>
     </section>
 
-  </main>
+    <section class="productos-dinamicos">
+      <h2>Monturas destacadas</h2>
+      <div id="contenedorProductos" class="grid-productos"></div>
+    </section>
 
-  <script>
-    const track = document.getElementById('track');
+  
+  
+</main>
+
+<script>
+  const track = document.getElementById('track');
     const prev = document.getElementById('prev');
     const next = document.getElementById('next');
     let pos = 0;
@@ -113,8 +120,9 @@
       pos = Math.max(pos - cardWidth, maxShift);
       updateTrack();
     });
-
-  </script>
+    
+</script>
+  <script src="productosPublicos.js"></script>
   <script src="../js/navbar.js"></script>
   <script src="../js/activeNav.js"></script>
 </body>
