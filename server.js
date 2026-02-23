@@ -25,6 +25,20 @@ app.get("/", (req, res) => {
   res.send("API MRA funcionando correctamente");
 });
 
+app.get('/about', (req, res) => {  res.sendFile(path.join(__dirname, 'public', 'pages', 'about.html'));});
+app.get('/citas', (req, res) => {  res.sendFile(path.join(__dirname, 'public', 'pages', 'citas.html'));});
+app.get('/lentesDeContacto', (req, res) => {  res.sendFile(path.join(__dirname, 'public', 'pages', 'lentesDeContacto.html'));});
+app.get('/monturas', (req, res) => {  res.sendFile(path.join(__dirname, 'public', 'pages', 'monturas.html'));});
+app.get('/login', (req, res) => {  res.sendFile(path.join(__dirname, 'public', 'pages', 'login.html'));});
+app.get('/productos', (req, res) => {  res.sendFile(path.join(__dirname, 'public', 'pages', 'productos.html'));});
+app.get('/promociones', (req, res) => {  res.sendFile(path.join(__dirname, 'public', 'pages', 'promociones.html'));});
+app.get('/registro', (req, res) => {  res.sendFile(path.join(__dirname, 'public', 'pages', 'registro.html'));});
+app.get('/tecnologias', (req, res) => {  res.sendFile(path.join(__dirname, 'public', 'pages', 'tecnologias.html'));});
+app.get('/visagismo', (req, res) => {  res.sendFile(path.join(__dirname, 'public', 'pages', 'visagismo.html'));});
+
+
+
+
 // app.use('/api/auth', require('./auth.routes.js'));
 // app.use('/api/usuarios', require('./usuarios.routes.js'));
 
