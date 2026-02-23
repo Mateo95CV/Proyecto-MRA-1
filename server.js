@@ -25,8 +25,8 @@ app.get("/", (req, res) => {
   res.send("API MRA funcionando correctamente");
 });
 
-// app.use('/api/auth', require('./auth.routes.js'));
-// app.use('/api/usuarios', require('./usuarios.routes.js'));
+app.use('/api/auth', require('./auth.routes.js'));
+app.use('/api/usuarios', require('./usuarios.routes.js'));
 
 app.get("/api/productos", async (req, res) => {
   try {
