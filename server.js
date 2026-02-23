@@ -1,19 +1,23 @@
 const express = require("express");
 const cors = require("cors");
-const { poolPromise } = require("./backend/db");
+const { poolPromise } = require("./db");
+const path = require("path");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const usuariosRoutes = require("./backend/usuarios.routes");
+// Este es pa cargar los archivos estaticos desde la carpeta public
+app.use(express.static(path.join(__dirname, 'public')));
+
+const usuariosRoutes = require("./usuarios.routes");
 app.use("/api/usuarios", usuariosRoutes);
 
 app.get("/", (req, res) => {
   res.send("API MRA funcionando correctamente");
 });
 
-const authRoutes = require("./backend/auth.routes");
+const authRoutes = require("./auth.routes");
 app.use("/api", authRoutes);
 
 app.get("/api/productos", async (req, res) => {
@@ -33,7 +37,7 @@ app.listen(3000, () =>
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Server on port ${port}`);
+  console.log(`Server en el puerto ${port}`);
 });
 
 module.exports = app;
