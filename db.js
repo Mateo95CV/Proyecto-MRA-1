@@ -1,11 +1,11 @@
 const sql = require("mssql");
 
 const config = {
-  user: "mra_user",
-  password: "TuClaveSegura123",
-  server: "localhost",
-  database: "MRA_DB",
-  port: 1433,
+  user: process.env.DB_USER || "mra_user",
+  password: process.env.DB_PASSWORD || "TuClaveSegura123",
+  server: process.env.DB_SERVER || "localhost",
+  database: process.env.DB_NAME || "MRA_DB",
+  port: process.env.DB_PORT || 1433,
   options: {
     encrypt: false,
     trustServerCertificate: true

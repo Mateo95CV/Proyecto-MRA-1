@@ -10,7 +10,6 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "msnodesqlv8": "^5.1.4",
-    "mssql": "^12.2.0"
+    "mysql2": "^3.11.0"
   }
 }
