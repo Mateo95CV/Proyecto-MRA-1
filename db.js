@@ -1,4 +1,4 @@
-const sql = require("mssql");
+const sql = require("mssql2");
 
 const config = {
   user: process.env.DB_USER || "mra_user",
