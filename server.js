@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { poolPromise } = require("./db");
+// const { poolPromise } = require("./db");
 const path = require("path");
 
 const app = express();
@@ -21,8 +21,8 @@ app.get("/", (req, res) => {
   res.send("API MRA funcionando correctamente");
 });
 
-app.use('/api/auth', require('./auth.routes'));
-app.use('/api/usuarios', require('./usuarios.routes'));
+// app.use('/api/auth', require('./auth.routes'));
+// app.use('/api/usuarios', require('./usuarios.routes'));
 
 app.get("/api/productos", async (req, res) => {
   try {
