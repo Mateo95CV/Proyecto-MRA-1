@@ -39,5 +39,4 @@ const port = process.env.PORT || 3000;
 
 console.log(`Server en el puerto http://localhost:${port}`);
 
-
 module.exports = app;
