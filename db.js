@@ -1,4 +1,4 @@
-const sql = require("mssql2");
+import sql from 'mssql';
 
 const config = {
   user: process.env.DB_USER || "mra_user",
@@ -23,7 +23,7 @@ const poolPromise = new sql.ConnectionPool(config)
     throw err;
   });
 
-module.exports = {
+export {
   sql,
   poolPromise
 };

@@ -1,4 +1,4 @@
-module.exports = function (...rolesPermitidos) {
+export default function (...rolesPermitidos) {
   return (req, res, next) => {
     if (!req.usuario) {
       return res.status(403).json({ mensaje: "Usuario no autenticado" });

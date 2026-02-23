@@ -1,11 +1,11 @@
-const express = require("express");
+import express from 'express';
 const router = express.Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const { poolPromise, sql } = require("./db");
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import { poolPromise, sql } from './db.js';
 
-const auth = require("./middlewares/auth");
-const roles = require("./middlewares/roles");
+import auth from './middlewares/auth.js';
+import roles from './middlewares/roles.js';
 
 
 const SECRET = "mra_secret_key"; // luego se mueve a .env
@@ -37,4 +37,4 @@ router.post("/login", async (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;

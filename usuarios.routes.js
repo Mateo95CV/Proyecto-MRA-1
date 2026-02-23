@@ -1,6 +1,6 @@
-const express = require("express");
+import express from 'express';
 const router = express.Router();
-const { sql, poolPromise } = require("./db");
+import { sql, poolPromise } from './db.js';
 
 /* GET */
 router.get("/", async (req, res) => {
@@ -13,5 +13,4 @@ router.get("/", async (req, res) => {
     res.status(500).send("Error SQL");
   }
 });
-
-module.exports = router;
+export default router;

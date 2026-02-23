@@ -1,5 +1,5 @@
-const bcrypt = require("bcryptjs");
-const { poolPromise, sql } = require("./db");
+import bcrypt from 'bcryptjs';
+import { poolPromise, sql } from './db.js';
 
 (async () => {
   const pool = await poolPromise;
