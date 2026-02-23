@@ -1,24 +1,24 @@
 export const monturas = [
-    { nombre:'RayBan Aviator', desc:'Lentes de sol clasicos', img:'/public/img/RaybanAviator.jpg', tipo:'Sol', marca:'Rayban' },
-    { nombre:'Oakley Sports', desc:'Lentes deportivos resistentes', img:'/public/img/OakleySport.jpg', tipo:'Sol', marca:'Oakley' },
-    { nombre:'Transitions', desc:'Se adaptan al sol automáticamente', img:'/public/img/Transitions.jpeg', tipo:'Sol', marca:'Transitions' },
-    { nombre:'Prada Luxury', desc:'Montura de lujo italiana', img:'/public/img/Prada.jpg', tipo:'Sol', marca:'Prada' }
+    { nombre:'RayBan Aviator', desc:'Lentes de sol clasicos', img:'/img/RaybanAviator.jpg', tipo:'Sol', marca:'Rayban' },
+    { nombre:'Oakley Sports', desc:'Lentes deportivos resistentes', img:'/img/OakleySport.jpg', tipo:'Sol', marca:'Oakley' },
+    { nombre:'Transitions', desc:'Se adaptan al sol automáticamente', img:'/img/Transitions.jpeg', tipo:'Sol', marca:'Transitions' },
+    { nombre:'Prada Luxury', desc:'Montura de lujo italiana', img:'/img/Prada.jpg', tipo:'Sol', marca:'Prada' }
 ];
 
 export const lentesContacto = [
-    { nombre:'Anyday', desc:'Descripción del producto', img:'/public/img/anyday.jpg', tipo:'Mensuales', marca:'Anyday' },
-    { nombre:'Fresh Look', desc:'Descripción del producto', img:'/public/img/freshlook.jpg', tipo:'Colores', marca:'FreshLook' },
-    { nombre:'Anyday Diarios', desc:'Descripción del producto', img:'/public/img/anyday-diarios.jpg', tipo:'Diarios', marca:'Anyday' },
-    { nombre:'Opharcil', desc:'Descripción del producto', img:'/public/img/opharcil.jpg', tipo:'Tóricos', marca:'Opharcil' }
+    { nombre:'Anyday', desc:'Descripción del producto', img:'/img/anyday.jpg', tipo:'Mensuales', marca:'Anyday' },
+    { nombre:'Fresh Look', desc:'Descripción del producto', img:'/img/freshlook.jpg', tipo:'Colores', marca:'FreshLook' },
+    { nombre:'Anyday Diarios', desc:'Descripción del producto', img:'/img/anyday-diarios.jpg', tipo:'Diarios', marca:'Anyday' },
+    { nombre:'Opharcil', desc:'Descripción del producto', img:'/img/opharcil.jpg', tipo:'Tóricos', marca:'Opharcil' }
 ];
 
 export const productos = [
-    { nombre:'Freegen PF', desc:'Descripción del producto', img:'/public/img/freegen-pf.jpg', tipo:'Gotas', marca:'Freegen' },
-    { nombre:'Freegen Gel', desc:'Descripción del producto', img:'/public/img/freegen-gel.jpg', tipo:'Gotas', marca:'Freegen' },
-    { nombre:'Freegen', desc:'Descripción del producto', img:'/public/img/freegen.jpg', tipo:'Gotas', marca:'Freegen' },
-    { nombre:'Opharcil', desc:'Descripción del producto', img:'/public/img/opharcil.jpg', tipo:'Kit', marca:'Opharcil' },
-    { nombre:'Air Optix', desc:'Descripción del producto', img:'/public/img/air-optix.jpg', tipo:'Lentes', marca:'Air' },
-    { nombre:'Cooper Vision', desc:'Descripción del producto', img:'/public/img/CooperVision.jpg', tipo:'Lentes', marca:'Cooper' }
+    { nombre:'Freegen PF', desc:'Descripción del producto', img:'/img/freegen-pf.jpg', tipo:'Gotas', marca:'Freegen' },
+    { nombre:'Freegen Gel', desc:'Descripción del producto', img:'/img/freegen-gel.jpg', tipo:'Gotas', marca:'Freegen' },
+    { nombre:'Freegen', desc:'Descripción del producto', img:'/img/freegen.jpg', tipo:'Gotas', marca:'Freegen' },
+    { nombre:'Opharcil', desc:'Descripción del producto', img:'/img/opharcil.jpg', tipo:'Kit', marca:'Opharcil' },
+    { nombre:'Air Optix', desc:'Descripción del producto', img:'/img/air-optix.jpg', tipo:'Lentes', marca:'Air' },
+    { nombre:'Cooper Vision', desc:'Descripción del producto', img:'/img/CooperVision.jpg', tipo:'Lentes', marca:'Cooper' }
 ];
 
 // Función genérica de renderizado

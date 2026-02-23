@@ -10,6 +10,10 @@ app.use(express.json());
 // Este es pa cargar los archivos estaticos desde la carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'pages', 'index.html'));
+});
+
 const usuariosRoutes = require("./usuarios.routes");
 app.use("/api/usuarios", usuariosRoutes);
 
@@ -17,8 +21,8 @@ app.get("/", (req, res) => {
   res.send("API MRA funcionando correctamente");
 });
 
-const authRoutes = require("./auth.routes");
-app.use("/api", authRoutes);
+app.use('/api/auth', require('./auth.routes'));
+app.use('/api/usuarios', require('./usuarios.routes'));
 
 app.get("/api/productos", async (req, res) => {
   try {
@@ -31,13 +35,9 @@ app.get("/api/productos", async (req, res) => {
   }
 });
 
-app.listen(3000, () =>
-  console.log("🚀 API corriendo en http://localhost:3000")
-);
-
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Server en el puerto ${port}`);
+  console.log(`Server en el puerto http://localhost:${port}`);
 });
 
 module.exports = app;
