@@ -14,8 +14,9 @@ const __dirname = path.dirname(__filename);
 // Este es pa cargar los archivos estaticos desde la carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+app.get('/pages/:name', (req, res) => {
+  const pageName = req.params.name;
+  res.sendFile(path.join(__dirname, 'public', 'pages', `${pageName}.html`));
 });
 
 import usuariosRoutes from './usuarios.routes.js';
