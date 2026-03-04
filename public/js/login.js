@@ -8,7 +8,7 @@ form.addEventListener("submit", async (e) => {
   const password = document.getElementById("password").value;
 
   try {
-    const res = await fetch("http://localhost:3000/api/login", {
+    const res = await fetch("http://localhost:3000/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -30,24 +30,12 @@ form.addEventListener("submit", async (e) => {
 
     // Redirección según rol
     if (data.rol === "Admin") {
-      window.location.href = "/public/admin/admin.html";
+      window.location.href = "/admin/admin.html";
     } else {
-      window.location.href = "/public/index.html";
+      window.location.href = "/";
     }
 
   } catch (error) {
     errorMsg.textContent = "No se pudo conectar con el servidor";
   }
 });
-
-fetch("http://localhost:3000/api/login", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    email,
-    password
-  })
-});
-

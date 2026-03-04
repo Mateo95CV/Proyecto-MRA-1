@@ -4,15 +4,21 @@ import { poolPromise } from './db.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+import authRoutes from './auth.routes.js';
+import usuariosRoutes from './usuarios.routes.js';
+import carritoRoutes from "./routes/carritoRoutes.js";
+
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path. dirname(__filename);
 
 // Este es pa cargar los archivos estaticos desde la carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
@@ -23,15 +29,10 @@ app.get('/pages/:name', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'pages', `${pageName}.html`));
 });
 
-import usuariosRoutes from './usuarios.routes.js';
-app.use("/api/usuarios", usuariosRoutes);
-
-app.get("/", (req, res) => {
-  res.send("API MRA funcionando correctamente");
-});
-
-// app.use('/api/auth', require('./auth.routes.js'));
-// app.use('/api/usuarios', require('./usuarios.routes.js'));
+// Apis
+app.use("/api/carrito", carritoRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/usuarios', usuariosRoutes);
 
 app.get("/api/productos", async (req, res) => {
   try {

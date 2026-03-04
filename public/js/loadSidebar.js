@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("/public/components/sidebar.html")
+  fetch("/components/sidebar.html")
     .then(res => res.text())
     .then(html => {
       const sidebarContainer = document.getElementById("admin-sidebar");

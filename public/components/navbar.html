@@ -5,8 +5,8 @@
     
     <!-- Logo -->
     <div class="logo">
-      <a href="/pages/index.html">
-        <img src="/img/LogoMRA.png" alt="logo">
+      <a href="/">
+        <img src="/img/LogoMRA1.png" alt="logo">
       </a>
     </div>
 
@@ -17,9 +17,16 @@
 
     <!-- Icons -->
     <div class="icons">
-      <a href="login.html"><div class="icon-btn">🛒</div></a>
-      <a href="visagismo.html"><div class="icon-btn">🥽</div></a>
-      <a href="login.html"><div class="icon-btn">⚙️</div></a>
+      <a href="/pages/usuarios/carrito.html"><div class="icon-btn">🛒</div></a>
+      <a href="/pages/visagismo.html"><div class="icon-btn">🥽</div></a>
+      <a href="/pages/usuarios/ajustes.html"><div class="icon-btn">⚙️</div></a>
+      <!-- Auth area: login shown when not authenticated; user + logout shown when authenticated -->
+      <div id="auth-area">
+        <a id="login-link" href="/pages/usuarios/login.html"><div class="btn-sesion">Iniciar sesión</div></a>
+        <div id="user-area" style="display:none;">
+          <button id="logoutBtn" class="btn-sesion">Cerrar sesión</button>
+        </div>
+      </div>
     </div>
 
   </div>

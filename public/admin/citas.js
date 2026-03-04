@@ -2,7 +2,7 @@ const token = localStorage.getItem("token");
 const rol = localStorage.getItem("rol");
 
 if (!token || rol !== "Admin") {
-  window.location.href = "/public/usuarios/login.html";
+  window.location.href = "../pages/usuarios/login.html";
 }
 
 let citas = [];
@@ -69,8 +69,3 @@ function deleteCita(id) {
     render();
   }
 }
-
-document.getElementById("logout").addEventListener("click", () => {
-localStorage.clear();
-window.location.href = "/public/usuarios/login.html";
-});

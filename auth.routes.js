@@ -4,7 +4,6 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { poolPromise, sql } from './db.js';
 
-import auth from './middlewares/auth.js';
 import roles from './middlewares/roles.js';
 
 

@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-export default function (req, res, next) {
+export function verificarToken(req, res, next) {
   const authHeader = req.headers["authorization"];
 
   if (!authHeader) {
@@ -20,4 +20,4 @@ export default function (req, res, next) {
   } catch (error) {
     return res.status(401).json({ mensaje: "Token inválido o expirado" });
   }
-};
+}

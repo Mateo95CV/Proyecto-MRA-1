@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito</title>
+</head>
+<body>
+
+<h2>Mi Carrito</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Total</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody id="carritoBody"></tbody>
+</table>
+
+<h3>Total: $<span id="totalGeneral">0</span></h3>
+
+<button onclick="finalizarCompra()">Finalizar Compra</button>
+
+<script src="/js/carrito.js"></script>
+</body>
+</html>

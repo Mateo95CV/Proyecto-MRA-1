@@ -2,7 +2,7 @@ const token = localStorage.getItem("token");
 const rol = localStorage.getItem("rol");
 
 if (!token || rol !== "Admin") {
-  window.location.href = "/public/usuarios/login.html";
+  window.location.href = "../pages/usuarios/login.html";
 }
 
 const form = document.getElementById("productForm");
@@ -76,8 +76,4 @@ async function eliminar(id) {
 // CARGAR AL INICIAR
 cargarProductos();
 
-// LOGOUT
-document.getElementById("logout").addEventListener("click", () => {
-  localStorage.clear();
-  window.location.href = "/public/usuarios/login.html";
-});
+
